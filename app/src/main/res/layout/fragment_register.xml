@@ -9,4 +9,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="register" />
+
+    <Button
+        android:id="@+id/btn_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Term" />
+
+    <Button
+        android:id="@+id/btn_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main" />
 </LinearLayout>
