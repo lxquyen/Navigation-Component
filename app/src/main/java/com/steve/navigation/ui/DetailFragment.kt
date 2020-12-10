@@ -1,23 +1,19 @@
 package com.steve.navigation.ui
 
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.viewbinding.ViewBinding
+import com.steve.navigation.base.BaseFragment
 import com.steve.navigation.databinding.FragmentDetailBinding
 
-class DetailFragment : Fragment() {
-    private lateinit var binding: FragmentDetailBinding
+class DetailFragment : BaseFragment<FragmentDetailBinding>() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentDetailBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun initBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentDetailBinding {
+        return FragmentDetailBinding.inflate(inflater, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initView() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }

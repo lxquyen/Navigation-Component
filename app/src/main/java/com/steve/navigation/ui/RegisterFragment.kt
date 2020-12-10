@@ -1,24 +1,19 @@
 package com.steve.navigation.ui
 
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.steve.navigation.R
+import com.steve.navigation.base.BaseFragment
 import com.steve.navigation.databinding.FragmentRegisterBinding
 
-class RegisterFragment : Fragment() {
-    private lateinit var binding: FragmentRegisterBinding
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentRegisterBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun initBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentRegisterBinding {
+        return FragmentRegisterBinding.inflate(inflater, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initView() {
         binding.btnTerm.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_termFragment)
         }
